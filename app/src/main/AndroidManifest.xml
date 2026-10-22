@@ -33,6 +33,10 @@
             android:name=".Admin.CreateNewTournament"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Admin.ViewQuizTournaments"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
