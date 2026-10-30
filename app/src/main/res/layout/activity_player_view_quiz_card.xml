@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvViewQuizTournament"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="20dp"
+    android:layout_marginHorizontal="20dp"
+    android:backgroundTint="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="left"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginVertical="5sp"
+        >
+
+        <TextView
+            android:id="@+id/txtViewCVQuizName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:maxHeight="60dp"
+            android:text="Quiz Name"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/txtViewCVQuizID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QuizID"
+            android:visibility="gone"
+
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5sp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category: "
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/txtViewCVQuizCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="category a"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5sp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difficulty: "
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/txtViewCVQuizDifficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="e.g. Medium"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="5sp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Range: "
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/txtViewCVQuizDateRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dd/mm/yyyy - dd/mm/yyyy"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5sp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rating: "
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <RatingBar
+                android:id="@+id/rbViewCVQuizRating"
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/Yellow"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="0.5"
+                android:stepSize="1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/txtParticipatedPlayerScoreTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Score: "
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/txtParticipatedPlayerScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X / 10 "
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</com.google.android.material.card.MaterialCardView>
