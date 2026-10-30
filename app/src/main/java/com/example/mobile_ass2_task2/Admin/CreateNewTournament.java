@@ -132,10 +132,6 @@ public class CreateNewTournament extends AppCompatActivity {
                 quizCategory = spnrQuizCategory.getSelectedItem().toString();
                 quizDifficulty = spnrQuizDifficulty.getSelectedItem().toString();
                 quizRating = (int)rbQuizRating.getRating();
-//                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-mm-yyyy");
-//                startDate = dpQuizStartDate.getDayOfMonth() + "-" + dpQuizStartDate.getMonth() + "-" + dpQuizStartDate.getYear();
-//                Date date1 = simpleDateFormat. ("06-12-2022");
-//                endDate = dpQuizEndDate.getDayOfMonth() + "/" + dpQuizEndDate.getMonth() + "/" + dpQuizEndDate.getYear();
                 Calendar startCalendar = Calendar.getInstance();
                 startCalendar.set(dpQuizStartDate.getYear(), dpQuizStartDate.getMonth(), dpQuizStartDate.getDayOfMonth());
 
@@ -156,38 +152,14 @@ public class CreateNewTournament extends AppCompatActivity {
                                 String startDateString = dpQuizStartDate.getYear() +"-"+ (dpQuizStartDate.getMonth()+1) +"-"+ dpQuizStartDate.getDayOfMonth();
                                 String endDateString = dpQuizEndDate.getYear() +"-"+ (dpQuizEndDate.getMonth()+1) +"-"+ dpQuizEndDate.getDayOfMonth();
                                 getQuestions(spnrQuizCategory.getSelectedItemPosition(), spnrQuizDifficulty.getSelectedItemPosition(),quizName, quizCategory, quizDifficulty, quizRating, startDateString, endDateString, tournamentID);
-
-//                                Map<String, Object> newQuizTournament = new HashMap<>();
-//                                newQuizTournament.put("name", quizName);
-//                                newQuizTournament.put("category", quizCategory);
-//                                newQuizTournament.put("difficulty", quizDifficulty );
-//                                newQuizTournament.put("start_date", (dpQuizStartDate.getYear() +"-"+ dpQuizStartDate.getMonth() +"-"+ dpQuizStartDate.getDayOfMonth()) );
-//                                newQuizTournament.put("end_date", () );
-//                                newQuizTournament.put("quizRating", quizRating);
-//                                newQuizTournament.put("quizQuestionIDs", "");
-//                                db.collection("quizTournament").document(tournamentID+"").set(newQuizTournament).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        if (task.isSuccessful()) {
-//                                            Toast.makeText(getApplicationContext(), "Success: Quiz Created", Toast.LENGTH_LONG).show();
-//                                        }
-//                                    }
-//                                });
                             }
                         }
                     });
-
-
-
-
-
                 } else {
                     // fields incorrect
                 }
-
             }
         });
-
     }
 
     private boolean checkFields(String quizName, String quizCategory, String quizDifficulty, int quizRating, Calendar startCalendar, Calendar endCalendar) {

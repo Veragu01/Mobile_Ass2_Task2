@@ -115,7 +115,9 @@ public class UpdateQuizTournament extends AppCompatActivity {
                     endDateCalendar.set(endYear, endMonth, endDay);
 
                     txtQuizQuestions.setText("");
+                    questionsString = "";
                     String[] questionTexts = new String[quizQuestionIDs.size()];
+                    int[] completed = {0};
 
                     for (int i=0; i<quizQuestionIDs.size(); i++) {
                         String questionID = quizQuestionIDs.get(i);
@@ -125,13 +127,22 @@ public class UpdateQuizTournament extends AppCompatActivity {
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                 if (task.isSuccessful()) {
                                     DocumentSnapshot document = task.getResult();
+                                    String correctAnswer = HtmlCompat.fromHtml(document.get("correct_answer").toString(), HtmlCompat.FROM_HTML_MODE_LEGACY).toString();
+                                    List<String> incorrectAnswers = (List<String>) document.get("incorrect_answers");
+
+
                                     questionTexts[j-1] = "Q"+ j +": " + HtmlCompat.fromHtml(String.valueOf(document.get("question")),
                                             HtmlCompat.FROM_HTML_MODE_LEGACY).toString() + "\n";
-                                    questionTexts[j-1] += "    A: \n";
-                                    questionTexts[j-1] += "    B: \n";
+                                    questionTexts[j-1] += "    Correct Answer: " + correctAnswer +" \n";
+
+                                    for (int k = 0; k < incorrectAnswers.size(); k++) {
+                                        String answer = HtmlCompat.fromHtml(incorrectAnswers.get(k), HtmlCompat.FROM_HTML_MODE_LEGACY).toString();
+                                        questionTexts[j - 1] += "    Incorrect Answer" + (k+1) + ": " + answer + "\n";
+                                    }
                                     questionTexts[j-1] += "\n";
 
-                                    if (j==questionTexts.length) {
+                                    completed[0]++;
+                                    if (completed[0] == questionTexts.length) {
                                         for (String questionText : questionTexts) {
                                             questionsString += questionText;
                                         }

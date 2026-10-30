@@ -1,5 +1,7 @@
 package com.example.mobile_ass2_task2.Admin.GetQuestionsAPI;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class Question {
@@ -7,16 +9,16 @@ public class Question {
     private String difficulty;
     private String category;
     private String question;
-    private String correctAnswer;
-    private List<String> incorrectAnswers;
+    private String correct_answer;
+    private List<String> incorrect_answers;
 
     public Question(String type, String difficulty, String category, String question, String correctAnswer, List<String> incorrectAnswers) {
         this.type = type;
         this.difficulty = difficulty;
         this.category = category;
         this.question = question;
-        this.correctAnswer = correctAnswer;
-        this.incorrectAnswers = incorrectAnswers;
+        this.correct_answer = correctAnswer;
+        this.incorrect_answers = incorrectAnswers;
     }
 
     public Question() {
@@ -40,18 +42,18 @@ public class Question {
     }
 
     public String getCorrectAnswer() {
-        return correctAnswer;
+        return correct_answer;
     }
 
     public List<String> getIncorrectAnswers() {
-        return incorrectAnswers;
+        return incorrect_answers;
     }
 
     public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
+        this.correct_answer = correctAnswer;
     }
 
     public void setIncorrectAnswers(List<String> incorrectAnswers) {
-        this.incorrectAnswers = incorrectAnswers;
+        this.incorrect_answers = incorrectAnswers;
     }
 }
