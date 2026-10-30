@@ -50,7 +50,7 @@ public class PlayerDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PlayerViewQuizTournaments.class);
-                intent.putExtra("quizFilter", "Upcomming");
+                intent.putExtra("quizFilter", "Upcoming");
                 startActivity(intent);
             }
         });
