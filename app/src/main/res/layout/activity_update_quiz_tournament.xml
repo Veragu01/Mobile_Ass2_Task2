@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin.ViewTournaments.UpdateQuizTournament"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/lightYellow">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="24sp"
+        android:text="Update Fruit"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="170sp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="5sp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="5sp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="10sp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="5sp"
+                        android:text="Quiz Tournament Name:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        />
+                    <EditText
+                        android:id="@+id/etUpdateQuizTournamentName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="e.g. Weekly General Knowledge Quiz"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10sp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rating: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            >
+                            <RatingBar
+                                android:id="@+id/rbUpdateQuizRating"
+                                android:layout_width="240sp"
+                                android:layout_height="45sp"
+                                android:scaleY="1"
+                                android:scaleX="1"
+                                android:numStars="5"
+                                android:rating="0"
+                                android:isIndicator="true"
+                                android:progressTint="@color/Yellow"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10sp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5sp"
+                            android:text="Category: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            />
+                        <TextView
+                            android:id="@+id/txtUpdateQuizTournamentCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="e.g. Entertainment: Video Games"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10sp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="5sp"
+                            android:text="Difficulty: "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            />
+                        <TextView
+                            android:id="@+id/txtUpdateQuizTournamentDifficulty"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="e.g. Easy"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="5sp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="5sp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="5sp"
+                    android:layout_marginHorizontal="10sp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start Date:"
+                        android:textColor="@color/black"
+                        />
+
+                    <DatePicker
+                        android:id="@+id/dpUpdateQuizStartDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="169sp"
+                        android:calendarViewShown="false"
+                        android:datePickerMode="spinner"
+                        android:scaleX="1"
+                        android:spinnersShown="true" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="5sp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="5sp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="5sp"
+                    android:layout_marginHorizontal="10sp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date:"
+                        android:textColor="@color/black"
+                        />
+
+                    <DatePicker
+                        android:id="@+id/dpUpdateQuizEndDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="169sp"
+                        android:calendarViewShown="false"
+                        android:datePickerMode="spinner"
+                        android:scaleX="1"
+                        android:spinnersShown="true" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="5sp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="5sp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginVertical="5sp"
+                    android:layout_marginHorizontal="10sp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quiz Tournament Questions"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/txtUpdateQuizQuestionsList"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Q1: Question title goes here \na: answer a\nb: answer b\nc: answer c\nd: answer d"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        />
+
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+<!--    Buttons Layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="-161sp"
+        >
+        <Button
+            android:id="@+id/btnUpdateQuizTournament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:text="Update Fruit"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:id="@+id/btnDeleteQuizTournament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:backgroundTint="@color/Red"
+            android:text="Delete Fruit"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:id="@+id/btnCancelUpdateQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/grey"
+            android:text="Cancel"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

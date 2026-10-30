@@ -33,7 +33,9 @@ public class ViewQuizzesCVHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
                 Toast.makeText(cvQuizCard.getContext(), "Opening Activity: " + txtQuizName.getText().toString(), Toast.LENGTH_LONG).show();
-//                Intent intent = new Intent(cvQuizCard.getContext(), updateclass.class);
+                Intent intent = new Intent(cvQuizCard.getContext(), UpdateQuizTournament.class);
+                intent.putExtra("docID", txtViewCVQuizID.getText().toString());
+                cvQuizCard.getContext().startActivity(intent);
             }
         });
 

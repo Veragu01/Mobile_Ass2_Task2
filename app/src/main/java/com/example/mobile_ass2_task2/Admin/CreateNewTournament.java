@@ -153,8 +153,8 @@ public class CreateNewTournament extends AppCompatActivity {
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
                                 String tournamentID = "QTid" + task.getResult().size();
-                                String startDateString = dpQuizStartDate.getYear() +"-"+ dpQuizStartDate.getMonth() +"-"+ dpQuizStartDate.getDayOfMonth();
-                                String endDateString = dpQuizEndDate.getYear() +"-"+ dpQuizEndDate.getMonth() +"-"+ dpQuizEndDate.getDayOfMonth();
+                                String startDateString = dpQuizStartDate.getYear() +"-"+ (dpQuizStartDate.getMonth()+1) +"-"+ dpQuizStartDate.getDayOfMonth();
+                                String endDateString = dpQuizEndDate.getYear() +"-"+ (dpQuizEndDate.getMonth()+1) +"-"+ dpQuizEndDate.getDayOfMonth();
                                 getQuestions(spnrQuizCategory.getSelectedItemPosition(), spnrQuizDifficulty.getSelectedItemPosition(),quizName, quizCategory, quizDifficulty, quizRating, startDateString, endDateString, tournamentID);
 
 //                                Map<String, Object> newQuizTournament = new HashMap<>();
