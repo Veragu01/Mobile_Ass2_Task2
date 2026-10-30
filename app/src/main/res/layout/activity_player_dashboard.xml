@@ -1,19 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Player.PlayerDashboard">
-
-    <TextView
-        android:layout_width="wrap_content"
+    tools:context=".Player.PlayerDashboard"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World! \nPlayer Dashboard"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick Quizzes"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="24sp"
+            android:layout_marginHorizontal="16sp"
+            />
+        <TextView
+            android:id="@+id/txtWelcomeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome player_name!"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="12sp"
+            android:layout_marginHorizontal="16sp"
+            />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/crdViewOngoingTournaments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/lightBlue"
+            android:clickable="true"
+            android:focusable="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ongoing Quiz Tournaments"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="32sp"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/crdViewUpcomingTournaments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/lightPurple"
+            android:clickable="true"
+            android:focusable="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upcoming Quiz Tournaments"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="32sp"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/crdViewPastTournaments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/lightPink"
+            android:clickable="true"
+            android:focusable="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Past Quiz Tournaments"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="32sp"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/crdViewParticipatedTournaments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16sp"
+            android:layout_marginBottom="16sp"
+            android:backgroundTint="@color/lightOrange"
+            android:clickable="true"
+            android:focusable="true"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Participated Quiz Tournaments"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginHorizontal="16sp"
+                android:layout_marginVertical="32sp"
+                />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdPlayerLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="16sp"
+        android:backgroundTint="@color/lightYellow"
+        android:clickable="true"
+        android:focusable="true"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="16sp"
+            android:layout_marginVertical="16sp"
+            />
+    </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</LinearLayout>

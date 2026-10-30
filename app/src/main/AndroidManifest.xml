@@ -47,6 +47,10 @@
             android:name=".Player.ViewQuizzes.PlayerViewQuizTournaments"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Player.OngoingQuizzes.PlayerOngoingQuizzes"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

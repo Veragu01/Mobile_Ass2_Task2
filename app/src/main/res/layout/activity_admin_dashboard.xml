@@ -51,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="Create New Quiz Tournament"
                 android:textSize="18sp"
+                android:textColor="@color/black"
                 android:layout_marginVertical="16sp"
                 />
         </LinearLayout>
@@ -86,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:text="View All Quiz Tournaments"
                 android:textSize="18sp"
+                android:textColor="@color/black"
                 android:layout_marginVertical="16sp"
                 />
         </LinearLayout>
