@@ -46,4 +46,12 @@ public class Question {
     public List<String> getIncorrectAnswers() {
         return incorrectAnswers;
     }
+
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+
+    public void setIncorrectAnswers(List<String> incorrectAnswers) {
+        this.incorrectAnswers = incorrectAnswers;
+    }
 }
