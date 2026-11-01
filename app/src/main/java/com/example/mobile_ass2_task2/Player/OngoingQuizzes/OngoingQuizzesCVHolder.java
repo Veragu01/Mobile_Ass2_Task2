@@ -1,6 +1,7 @@
 package com.example.mobile_ass2_task2.Player.OngoingQuizzes;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -38,6 +39,7 @@ public class OngoingQuizzesCVHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(cvQuizCard.getContext(), "Opening Activity: " + txtQuizName.getText().toString(), Toast.LENGTH_LONG).show();
+                Log.d("OngoingQuiz", "TEST" + txtViewCVQuizID.getText().toString());
                 Intent intent = new Intent(cvQuizCard.getContext(), QuizGameActivity.class);
                 intent.putExtra("quizID", txtViewCVQuizID.getText().toString());
                 cvQuizCard.getContext().startActivity(intent);

@@ -71,6 +71,7 @@ public class PlayerOngoingQuizzes extends AppCompatActivity {
                                 QuizTournament quiz = document.toObject(QuizTournament.class);
                                 quiz.setDocumentID(document.getId());
                                 ongoingQuizTournaments.add(quiz);
+                                Log.d("OngoingQuiz", document.getId());
                             }
                         }
                     }

@@ -1,5 +1,6 @@
 package com.example.mobile_ass2_task2.Player.OngoingQuizzes;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ public class OngoingQuizzesCVAdapter extends RecyclerView.Adapter<OngoingQuizzes
     public void onBindViewHolder(@NonNull OngoingQuizzesCVHolder holder, int position) {
         QuizTournament quiz = quizTournamentList.get(position);
 
+        Log.d("OngoingQuiz", quiz.getDocumentID());
         holder.txtViewCVQuizID.setText(quiz.getDocumentID());
         holder.txtQuizName.setText(quiz.getName());
         holder.txtQuizCategory.setText(quiz.getCategory());

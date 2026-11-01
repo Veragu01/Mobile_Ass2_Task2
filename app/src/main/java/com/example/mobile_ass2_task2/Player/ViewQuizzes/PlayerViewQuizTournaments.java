@@ -105,10 +105,12 @@ public class PlayerViewQuizTournaments extends AppCompatActivity {
                                 QuizTournament quiz = document.toObject(QuizTournament.class);
                                 quiz.setDocumentID(document.getId());
                                 quizTournaments.add(quiz);
+                                adapter.notifyDataSetChanged();
                             } else if ( quizFilter.equals("Past") && todayCalendar.after(endCalendar) ) {
                                 QuizTournament quiz = document.toObject(QuizTournament.class);
                                 quiz.setDocumentID(document.getId());
                                 quizTournaments.add(quiz);
+                                adapter.notifyDataSetChanged();
                             }
                             else if ( quizFilter.equals("Participated")) { // && check if player_quiz item exists   ) {
 

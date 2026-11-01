@@ -227,7 +227,9 @@ public class QuizGameActivity extends AppCompatActivity {
                     quiz.setDocumentID(document.getId());
                     List<String> questionIDs = quiz.getQuizQuestionIDs();
                     String questionID = "";
-                    questionID = "QQid"+ questionNumber;
+                    questionID = questionIDs.get(questionNumber-1);
+
+//                    questionID = "QQid"+ questionNumber;
                     txtQuizTitle.setText(HtmlCompat.fromHtml(document.get("name").toString() ,HtmlCompat.FROM_HTML_MODE_LEGACY).toString());
                     Log.d("QuestionID", questionID);
                     for (String question : questionIDs) {
