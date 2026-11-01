@@ -66,7 +66,7 @@ public class PlayerOngoingQuizzes extends AppCompatActivity {
                             String[] endDateSplit = endDateString.split("-", 3);
                             endCalendar.set(Integer.parseInt(endDateSplit[0]), Integer.parseInt(endDateSplit[1])-1, Integer.parseInt(endDateSplit[2]));
 
-                            if ( !todayCalendar.before(startCalendar) || !todayCalendar.after(endCalendar)) {
+                            if ( !todayCalendar.before(startCalendar) && !todayCalendar.after(endCalendar)) {
 //                            if ((todayCalendar.equals(startCalendar) || todayCalendar.after(startCalendar)) && (todayCalendar.before(endCalendar) || todayCalendar.equals(endCalendar))) {
                                 QuizTournament quiz = document.toObject(QuizTournament.class);
                                 quiz.setDocumentID(document.getId());

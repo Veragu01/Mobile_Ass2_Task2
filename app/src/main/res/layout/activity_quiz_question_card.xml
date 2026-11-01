@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvViewQuizTournament"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="20dp"
+    android:layout_marginHorizontal="20dp"
+    android:backgroundTint="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginVertical="10sp"
+        android:backgroundTint="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/txtCVQuizQuestionAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:maxHeight="60dp"
+            android:text="Quiz Name"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/txtCVQuizQuestionAnswerID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QuizID"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

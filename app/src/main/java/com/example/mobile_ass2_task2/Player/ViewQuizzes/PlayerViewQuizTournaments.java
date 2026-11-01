@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -20,6 +21,8 @@ import com.example.mobile_ass2_task2.Player.OngoingQuizzes.OngoingQuizzesCVAdapt
 import com.example.mobile_ass2_task2.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -34,6 +37,7 @@ public class PlayerViewQuizTournaments extends AppCompatActivity {
     RecyclerView rvQuizTournaments;
     List<QuizTournament> quizTournaments;
     FirebaseFirestore db;
+    FirebaseAuth mAuth;
     String quizFilter;
 
     @Override
@@ -53,6 +57,7 @@ public class PlayerViewQuizTournaments extends AppCompatActivity {
 
         rvQuizTournaments = findViewById(R.id.rvPlayerViewQuiz);
         db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         quizTournaments = new ArrayList<QuizTournament>();
 
         Intent intent = getIntent();
@@ -75,9 +80,9 @@ public class PlayerViewQuizTournaments extends AppCompatActivity {
             default:
         }
 
-        PlayerViewQuizzesCVAdapter adapter = new PlayerViewQuizzesCVAdapter(quizTournaments);
+        PlayerViewQuizzesCVAdapter adapter = new PlayerViewQuizzesCVAdapter(quizTournaments, quizFilter);
 
-        db.collection("quizTournaments").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("quizTournament").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
@@ -105,16 +110,36 @@ public class PlayerViewQuizTournaments extends AppCompatActivity {
                                 quiz.setDocumentID(document.getId());
                                 quizTournaments.add(quiz);
                             }
-//                            else if ( quizFilter.equals("Participated") // && check if player_quiz item exists   ) {
-//                                QuizTournament quiz = document.toObject(QuizTournament.class);
-//                                quiz.setDocumentID(document.getId());
-//                                quizTournaments.add(quiz);
-//                            }
+                            else if ( quizFilter.equals("Participated")) { // && check if player_quiz item exists   ) {
+
+                                db.collection("player_quiz").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            for (DocumentSnapshot player_quizDocument : task.getResult()) {
+                                                String docID = player_quizDocument.getId();
+                                                if (docID.contains(document.getId()) && docID.contains(mAuth.getCurrentUser().getUid())) {
+                                                    QuizTournament quiz = document.toObject(QuizTournament.class);
+                                                    quiz.setDocumentID(document.getId());
+                                                    quizTournaments.add(quiz);
+                                                    Log.d("OngoingQuiz", "Recycler View updated with Quiz Tournaments. " + quizTournaments.size() + " " + quizFilter);
+
+                                                    break;
+                                                }
+                                            }
+                                            adapter.notifyDataSetChanged();
+                                        }
+
+                                    }
+                                });
+
+
+                            }
 
                         }
                     }
-                    adapter.notifyDataSetChanged();
-                    Log.d("OngoingQuiz", "Recycler View updated with ongoing Quiz Tournaments");
+                    Log.d("OngoingQuiz", "Recycler View updated with Quiz Tournaments. " + quizTournaments.size() + " " + quizFilter);
+
 //                    pbLoadingFruitRV.setVisibility(View.GONE);
 //                    rv.setVisibility(View.VISIBLE);
                 }

@@ -133,21 +133,20 @@ end date and rating ( 1 to 5
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16sp"
                 android:layout_marginBottom="10sp"
-                android:backgroundTint="@color/lightGreen"
-                >
+                android:backgroundTint="@color/lightGreen">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_marginVertical="5sp"
                     android:layout_marginHorizontal="10sp"
-                    >
+                    android:layout_marginVertical="5sp"
+                    android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Start Date:"
-                        android:textColor="@color/black"
-                        />
+                        android:textColor="@color/black" />
 
                     <DatePicker
                         android:id="@+id/dpNewQuizStartDate"
@@ -192,38 +191,38 @@ end date and rating ( 1 to 5
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16sp"
-                android:layout_marginBottom="10sp"
-                android:backgroundTint="@color/lightGreen"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_marginVertical="5sp"
-                    android:layout_marginHorizontal="10sp"
-                    >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Quiz Rating:"
-                        android:textColor="@color/black"
-                        />
+<!--            <com.google.android.material.card.MaterialCardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="16sp"-->
+<!--                android:layout_marginBottom="10sp"-->
+<!--                android:backgroundTint="@color/lightGreen"-->
+<!--                >-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_marginVertical="5sp"-->
+<!--                    android:layout_marginHorizontal="10sp"-->
+<!--                    >-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Quiz Rating:"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        />-->
 
-                    <RatingBar
-                        android:id="@+id/rbTournamentRating"
-                        android:layout_width="243dp"
-                        android:layout_height="wrap_content"
-                        android:numStars="5"
-                        android:rating="0.5"
-                        android:stepSize="1"
-                        android:progressTint="@color/Yellow"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+<!--                    <RatingBar-->
+<!--                        android:id="@+id/rbTournamentRating"-->
+<!--                        android:layout_width="243dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:numStars="5"-->
+<!--                        android:rating="0.5"-->
+<!--                        android:stepSize="1"-->
+<!--                        android:progressTint="@color/Yellow"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+<!--            </com.google.android.material.card.MaterialCardView>-->
         </LinearLayout>
     </ScrollView>
 

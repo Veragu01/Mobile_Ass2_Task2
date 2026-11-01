@@ -45,7 +45,7 @@ public class CreateNewTournament extends AppCompatActivity {
     EditText txtQuizName;
     Spinner spnrQuizCategory, spnrQuizDifficulty;
     DatePicker dpQuizStartDate, dpQuizEndDate;
-    RatingBar rbQuizRating;
+//    RatingBar rbQuizRating;
     Button btnCreateQuiz;
     List<String> categoryList, categoryAPIStringList, difficultyList, difficultyAPIStringList;
     String quizName, quizCategory, quizDifficulty, startDate, endDate, APIString;
@@ -70,11 +70,11 @@ public class CreateNewTournament extends AppCompatActivity {
         spnrQuizDifficulty = findViewById(R.id.spnrNewQuizDifficulty);
         dpQuizStartDate = findViewById(R.id.dpNewQuizStartDate);
         dpQuizEndDate = findViewById(R.id.dpNewQuizEndDate);
-        rbQuizRating = findViewById(R.id.rbTournamentRating);
+//        rbQuizRating = findViewById(R.id.rbTournamentRating);
         btnCreateQuiz = findViewById(R.id.btnCreateQuiz);
         db = FirebaseFirestore.getInstance();
 
-        rbQuizRating.setRating(0);
+//        rbQuizRating.setRating(0);
 
         difficultyList = new ArrayList<String>();
         difficultyList.add("Any Difficulty");
@@ -131,7 +131,7 @@ public class CreateNewTournament extends AppCompatActivity {
                 quizName = txtQuizName.getText().toString().trim();
                 quizCategory = spnrQuizCategory.getSelectedItem().toString();
                 quizDifficulty = spnrQuizDifficulty.getSelectedItem().toString();
-                quizRating = (int)rbQuizRating.getRating();
+                quizRating = 0;
                 Calendar startCalendar = Calendar.getInstance();
                 startCalendar.set(dpQuizStartDate.getYear(), dpQuizStartDate.getMonth(), dpQuizStartDate.getDayOfMonth());
 
@@ -140,7 +140,7 @@ public class CreateNewTournament extends AppCompatActivity {
                 Log.d("Test", endCalendar.toString());
                 Log.d("Test", endCalendar.before(startCalendar) + "");
 
-                if (checkFields(quizName, quizCategory, quizDifficulty, quizRating, startCalendar, endCalendar) ) {
+                if (checkFields(quizName, startCalendar, endCalendar) ) {
                     // fields correct
                     // Fields include name, category, difficulty, start date, end date and rating ( 1 to 5)
                     CollectionReference tournamentCollection = db.collection("quizTournament");
@@ -162,14 +162,10 @@ public class CreateNewTournament extends AppCompatActivity {
         });
     }
 
-    private boolean checkFields(String quizName, String quizCategory, String quizDifficulty, int quizRating, Calendar startCalendar, Calendar endCalendar) {
+    private boolean checkFields(String quizName, Calendar startCalendar, Calendar endCalendar) {
         boolean fieldsCorrect = true;
         if (quizName.isEmpty() ) {
             Toast.makeText(getApplicationContext(), "Error: Please enter a Quiz Name", Toast.LENGTH_SHORT).show();
-            fieldsCorrect = false;
-
-        } else if (quizRating == 0) {
-            Toast.makeText(getApplicationContext(), "Error: Please enter a Quiz Rating", Toast.LENGTH_SHORT).show();
             fieldsCorrect = false;
 
         } else if (!startCalendar.before(endCalendar)) {

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Player.PlayQuiz.QuizGameActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/OffWhite">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:backgroundTint="@color/Purple"
+        android:layout_marginTop="-20sp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:id="@+id/txtQuizTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A Really Very Long Name of Quiz to test two lines of quiz name"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="20sp"
+                android:layout_marginHorizontal="30sp"
+                />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="-50sp"
+        android:layout_marginHorizontal="50sp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginHorizontal="20sp"
+                android:layout_marginTop="10sp"
+                >
+                <TextView
+                    android:id="@+id/txtCorrectNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/Green"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:id="@+id/txtQuizQuestionNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Q0"
+                    android:textColor="@color/black"
+                    android:textSize="32sp"
+                    android:layout_marginHorizontal="100sp"
+                    />
+                <TextView
+                    android:id="@+id/txtIncorrectNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/Red"
+                    android:textSize="16sp"
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txtQuizQuestionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This is a sample question title for use as a placeholder?"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginVertical="20sp"
+                android:layout_marginHorizontal="10sp"
+
+                />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdFinalScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="50sp"
+        android:layout_marginHorizontal="50sp"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Final Score:"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="10sp"
+                android:layout_marginTop="16sp"
+                />
+            <TextView
+                android:id="@+id/txtFinalScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="x/10"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="10sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginBottom="16sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rate the Quiz:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="10sp"
+                android:layout_marginTop="16sp"
+                />
+            <RatingBar
+                android:id="@+id/rbPlayerRateQuiz"
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0.5"
+                android:stepSize="1"
+                android:progressTint="@color/Yellow"
+
+                />
+
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    Quiz answer cards-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdQuizQuestion1"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15sp"
+            android:maxHeight="60dp"
+            android:text="Answer 1"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer1ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QuizID"
+            android:visibility="gone"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdQuizQuestion2"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15sp"
+            android:maxHeight="60dp"
+            android:text="Answer 2"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer2ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QuizID"
+            android:visibility="gone"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdQuizQuestion3"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15sp"
+            android:maxHeight="60dp"
+            android:text="Answer 3"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer3ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QuizID"
+            android:visibility="gone"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/crdQuizQuestion4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="@color/white"
+        >
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15sp"
+            android:maxHeight="60dp"
+            android:text="Answer 4"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/txtQuizQuestionAnswer4ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QuizID"
+            android:visibility="gone"
+            />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <Button
+        android:id="@+id/btnNextQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80sp"
+        android:layout_marginBottom="20sp"
+        android:backgroundTint="@color/Purple"
+        android:text="Next Question"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        />
+
+</LinearLayout>
