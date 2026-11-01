@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="24sp"
-        android:text="Update Fruit"
+        android:text="Update Quiz Tournament"
         android:textStyle="bold"
         android:textSize="24sp"
         android:textColor="@color/black"
@@ -268,7 +268,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16sp"
-            android:text="Update Fruit"
+            android:text="Update Quiz"
             android:textSize="18sp"
             android:textColor="@color/white"
             />
@@ -278,7 +278,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16sp"
             android:backgroundTint="@color/Red"
-            android:text="Delete Fruit"
+            android:text="Delete Quiz"
             android:textSize="18sp"
             android:textColor="@color/white"
             />

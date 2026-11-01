@@ -11,10 +11,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mobile_ass2_task2.Login;
 import com.example.mobile_ass2_task2.R;
 
 public class AdminDashboard extends AppCompatActivity {
-    CardView crdNewQuiz, crdViewQuizzes;
+    CardView crdNewQuiz, crdViewQuizzes, crdLogout;
 
 
     @Override
@@ -30,6 +31,7 @@ public class AdminDashboard extends AppCompatActivity {
 
         crdNewQuiz = findViewById(R.id.crdCreateNewQuiz);
         crdViewQuizzes = findViewById(R.id.crdViewAllQuizzes);
+        crdLogout = findViewById(R.id.crdAdminLogout);
 
         crdNewQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,15 @@ public class AdminDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ViewQuizTournaments.class);
+                startActivity(intent);
+            }
+        });
+
+        crdLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });
